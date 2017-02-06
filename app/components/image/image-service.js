@@ -5,9 +5,10 @@ function ImageService() {
 
 	this.getImage = function (callWhenDone) {
 		// ^^^^^^^ How do you use this?
-		return $.get(apiUrl, function (res) {
-			console.log('Image Data:', res)
+		return  fetch(apiUrl)
+			.then(res=>res.json())
+			
 			//What are you going to do with the image that comes back?
-		})
+		}
 	}
-}
+

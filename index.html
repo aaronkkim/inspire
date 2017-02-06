@@ -3,27 +3,94 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Inspire</title>
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+		crossorigin="anonymous">
 	<link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 
 <body id="body">
-	<div id="weather">
-		{{weather}}
+	<div class="raised">
+
+		<div class="top" >
+
+			
+			<div id="weather" class="weather-font item">
+				<div class="elevated-box">
+
+				<div class ="center-text">
+					{{displayWeather.town}}
+				</div>
+				<div v-show="tempF == true" @click="tempF=!tempF">
+					{{displayWeather.tempF}} 
+
+				</div>
+				<div v-show="tempF==false" @click="tempF=!tempF">	
+					{{displayWeather.tempC}}
+				</div>
+				</div>
+			</div>
+			<div id="todo" class="todo">
+				<div class="elevated-box">
+					<form @submit.prevent="submitToDo">
+
+						<input type="text" v-model="toDo" placeholder=" Enter Todos" class="input" required>
+
+					</form>
+					<ul>
+						<li v-for="(todo, i) in toDos" @click="removeToDo(i)">
+							{{todo}}
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+
+
+		<div class="bottom">
+
+			<div id="time" class = "item" >
+				<div class="elevated-box">
+
+				<h1 class="big-font ">
+					{{prettyTime}}
+				</h1>
+			</div>
+				</div>
+			<div id="quote" class="quote elevated-box">
+				<h4>
+					{{displayQuote.quote}}
+				</h4>
+				<div class="author-container">
+				<h2>
+					{{displayQuote.author}}
+				</h2>
+
+				</div>
+			</div>
+		</div>
+
+
+
+
+
 	</div>
 
-	<div id="quote">
+
+	<div id="image">
+		<div :style="bstyle" class="bg">
+
+		</div>
 
 	</div>
 
-	<div id="todo">
-
-	</div>
 
 
-
-
-		<!--JS Libraries-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
+	<!--JS Libraries-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.js"></script>
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
 	<!--Initialize App-->
@@ -34,10 +101,13 @@
 	<script src="app/components/todo/todo-service.js"></script>
 
 	<!--Load your scripts below-->
+	<script src="app/components/time/time-controller.js"></script>
 	<script src="app/components/weather/weather-controller.js"></script>
 	<script src="app/components/image/image-controller.js"></script>
 	<script src="app/components/quote/quote-controller.js"></script>
 	<script src="app/components/todo/todo-controller.js"></script>
+	<!--<script src="app/components/init.js"></script>-->
+
 
 </body>
 

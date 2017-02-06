@@ -1,0 +1,131 @@
+body{
+   font-family: 'Inconsolata', monospace;
+    color:#fafafa;
+
+    
+}
+.bg{
+    position: fixed ;
+    height: 100vh;
+    width: 100vw;
+    top :0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:0;
+    overflow: hidden;
+
+}
+.raised{
+    z-index: 2;
+    position: fixed;
+        position: fixed ;
+    height: 100vh;
+    width: 100vw;
+    top :0;
+    left:0;
+    right:0;
+    bottom:0;
+    overflow: hidden;
+
+}
+.top{
+    height:33%;
+    display:flex;
+    justify-content:space-between;
+    flex-direction:row-reverse;
+    align-items: flex-start;
+}
+.bottom{
+    height:66%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content: space-around;
+}
+.quote{
+    position:relative;
+    width:20vw;
+    height:30%;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    }
+.author-container{
+    background-color:black;
+    border-radius: 10%;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    height:100%;
+    width:100%;
+    transition:opacity 1s ease-out;
+    color:white;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+
+}
+.author-container h5{
+    color:white;
+}
+.quote .author-container{
+    opacity:0;
+
+}   
+.quote:hover .author-container{
+    opacity:1;
+    
+
+
+}   
+.center{
+    display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+
+.big-font{
+font-size:16em;
+}
+.weather-font{
+    font-size:2em;
+}
+.elevated-box{
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
+    background: rgba(8, 17, 40, .45);
+    color: #fafafa;
+    width: 100%;
+    height: 100%; 
+    padding: 15px;
+    border-radius:4px;
+    text-align: center;
+    }
+    .weather{
+        position: relative;
+    }
+
+
+
+  .input {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid black;
+}
+
+
+.center-text{
+    text-align: center;
+}
+
+.item{
+    height:inherit;
+}
+.todo{
+    height:60%;
+    overflow-y: scroll;
+}
